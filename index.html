@@ -2,18 +2,24 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f2f5ef">
   <title>Lista della spesa</title>
   <link rel="stylesheet" href="style.css">
+  <script src="tema.js"></script>
 </head>
 <body>
   <main class="scheda">
     <header class="intestazione">
-      <div>
+      <div class="titoli">
+        <p id="saluto" class="saluto">Ciao</p>
         <h1>Lista della spesa</h1>
         <p id="contatore" class="contatore">Nessun articolo</p>
       </div>
-      <span class="icona-carrello" aria-hidden="true">🛒</span>
+      <button type="button" id="cambia-tema" class="pulsante-tema">
+        <span class="pulsante-tema-icona" aria-hidden="true">🕒</span>
+        <span class="pulsante-tema-testo">Auto</span>
+      </button>
     </header>
 
     <div class="barra-progresso" aria-hidden="true">
@@ -21,19 +27,23 @@
     </div>
 
     <form id="form-articolo" class="form-articolo">
-      <input type="text" id="input-articolo" placeholder="Cosa devi comprare?" autocomplete="off" aria-label="Nuovo articolo">
-      <button type="submit" class="pulsante-aggiungi">Aggiungi</button>
+      <input type="text" id="input-articolo" placeholder="Cosa devi comprare?" autocomplete="off" enterkeyhint="done" aria-label="Nuovo articolo">
+      <button type="submit" class="pulsante-aggiungi" aria-label="Aggiungi">
+        <span class="piu" aria-hidden="true">+</span>
+        <span class="pulsante-aggiungi-testo">Aggiungi</span>
+      </button>
     </form>
 
     <ul id="lista" class="lista"></ul>
 
     <div id="vuoto" class="vuoto">
-      <span class="vuoto-icona" aria-hidden="true">📝</span>
-      <p>La lista è vuota.<br>Aggiungi il primo articolo qui sopra.</p>
+      <span class="vuoto-icona" aria-hidden="true">🧺</span>
+      <p class="vuoto-titolo">La lista è vuota</p>
+      <p>Scrivi il primo articolo da comprare.</p>
     </div>
 
     <footer id="piede" class="piede">
-      <span class="suggerimento">Clicca su un articolo per barrarlo</span>
+      <span class="suggerimento">Tocca un articolo per barrarlo</span>
       <button type="button" id="rimuovi-presi" class="pulsante-secondario">Rimuovi presi</button>
     </footer>
   </main>
