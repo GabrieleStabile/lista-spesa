@@ -7,15 +7,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>Lista della spesa</h1>
+  <main class="scheda">
+    <header class="intestazione">
+      <div>
+        <h1>Lista della spesa</h1>
+        <p id="contatore" class="contatore">Nessun articolo</p>
+      </div>
+      <span class="icona-carrello" aria-hidden="true">🛒</span>
+    </header>
 
-    <form id="form-articolo">
-      <input type="text" id="input-articolo" placeholder="Scrivi un articolo..." autocomplete="off" required>
-      <button type="submit">Aggiungi</button>
+    <div class="barra-progresso" aria-hidden="true">
+      <div id="progresso" class="progresso"></div>
+    </div>
+
+    <form id="form-articolo" class="form-articolo">
+      <input type="text" id="input-articolo" placeholder="Cosa devi comprare?" autocomplete="off" aria-label="Nuovo articolo">
+      <button type="submit" class="pulsante-aggiungi">Aggiungi</button>
     </form>
 
-    <ul id="lista"></ul>
+    <ul id="lista" class="lista"></ul>
+
+    <div id="vuoto" class="vuoto">
+      <span class="vuoto-icona" aria-hidden="true">📝</span>
+      <p>La lista è vuota.<br>Aggiungi il primo articolo qui sopra.</p>
+    </div>
+
+    <footer id="piede" class="piede">
+      <span class="suggerimento">Clicca su un articolo per barrarlo</span>
+      <button type="button" id="rimuovi-presi" class="pulsante-secondario">Rimuovi presi</button>
+    </footer>
   </main>
 
   <script src="script.js"></script>
